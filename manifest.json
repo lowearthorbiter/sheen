@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Sheen",
+	"description": "Add some shine to chrome with power shortcuts.",
+	"version": "1.0",
+	"permissions": ["tabs","background"],
+	"options_page": "options.html",
+	"background": {
+			"scripts": ["back.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["jquery.js", "contentscript.js"],
+			"run_at": "document_start"
+		}
+	]
+}
